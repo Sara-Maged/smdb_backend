@@ -55,18 +55,4 @@ public class RatingService {
         return ratingRepository.save(ratingEntity);
     }
 
-
-//    public void addRating(RatingEntity rating) {
-//
-//        UserEntity user = userRepository.getById(rating.getUserEntity().getId());
-//        MovieEntity movie = movieRepository.getById(rating.getMovieEntity().getId());
-//
-//        Optional<RatingEntity> ratingByUser = ratingRepository.findById(user.getId());
-//        if(!ratingByUser.isPresent()){
-//            throw new IllegalStateException("User Does not Exist");
-//        }
-//
-//        ratingRepository.save(rating);
-//    }
-
 }
