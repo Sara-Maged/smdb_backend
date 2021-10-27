@@ -64,9 +64,4 @@ public class UserService {
         RoleEntity role = roleRepository.findByName(roleName);
         user.getRoles().add(role);
     }
-
-//    public List<MovieEntity> getUserRecommendation(Integer id) {
-//        UserEntity user = userRepository.getById(id);
-//        Collection<RatingEntity> userRatings = user.getRatings();
-//    }
 }
