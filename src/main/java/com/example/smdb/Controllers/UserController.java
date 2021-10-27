@@ -35,22 +35,6 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RestController
 @Slf4j
 public class UserController {
-
-//    @GetMapping("/")
-//    public String home(){
-//        return ("<h1>Welcome</h1>");
-//    }
-//    @GetMapping("/user")
-//    public String user(){
-//        return ("<h1>Welcome User</h1>");
-//    }
-//
-//    @GetMapping("/admin")
-//    public String admin(){
-//        log.info("IM HERE");
-//        return ("<h1>Welcome Admin</h1>");
-//    }
-
     private final UserService userService;
 
     @Autowired
@@ -74,10 +58,6 @@ public class UserController {
         return ResponseEntity.ok().build();
     }
 
-//    @GetMapping("user/{id}/recommendations")
-//    public ResponseEntity<List<MovieEntity>> getUserRecommendations(@PathVariable("id") Integer id) throws Exception{
-//        return ResponseEntity.ok().body(userService.getUserRecommendation(id));
-//    }
 
     @GetMapping("/refreshToken")
     public void refreshToken(HttpServletRequest request, HttpServletResponse response) throws IOException {
