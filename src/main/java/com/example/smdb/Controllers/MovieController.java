@@ -63,9 +63,4 @@ public class MovieController {
         return ResponseEntity.ok().body(movieService.getFlaggedMovies());
     }
 
-//    @PutMapping("user/addRating")
-//    public ResponseEntity<List<MovieEntity>> updateAverageRating(){
-//        return ResponseEntity.ok().body(movieService.updateAverageRating());
-//    }
-
 }
