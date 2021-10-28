@@ -94,8 +94,4 @@ public class MovieService {
                     return movieRepository.save(updatedMovie);
                 });
     }
-
-//    public List<MovieEntity> updateAverageRating() {
-//
-//    }
 }

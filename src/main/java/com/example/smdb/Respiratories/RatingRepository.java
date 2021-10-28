@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface RatingRepository extends JpaRepository<RatingEntity, Integer> {
+<<<<<<< HEAD
     //List<RatingEntity> findAllByMovieEntity_IdWithin(int id);
 
 //    List<RatingEntity> findAllByRatingIdUserIdWithin();
@@ -20,4 +21,6 @@ public interface RatingRepository extends JpaRepository<RatingEntity, Integer> {
 
 
 
+=======
+>>>>>>> 4ceb08bf954cc10d2e8c41db5f43884bc604260d
 }

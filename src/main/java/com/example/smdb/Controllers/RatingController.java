@@ -28,10 +28,4 @@ public class RatingController {
         ResponseEntity.ok().body(ratingService.userRate(rating.getRatingId().getUserId(), rating.getRatingId().getMovieId(),
                 rating.getRating()));
     }
-
-//    @PostMapping("/postRating")
-//    public ResponseEntity<?> saveCustomer(@RequestBody UserEntity user) {
-//        return new ResponseEntity<>(userService.saveUser(user), HttpStatus.CREATED);
-//    }
-
 }
