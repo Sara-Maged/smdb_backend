@@ -48,7 +48,6 @@ public class MovieController {
 
     @PutMapping("admin/editMovie/{id}")
     public ResponseEntity<MovieEntity> editMovieById(@RequestBody MovieEntity updatedMovie, @PathVariable("id") Integer id){
-        //MovieEntity movie = movieService.editMovieById(id);
         return ResponseEntity.ok().body(movieService.editMovieById(id, updatedMovie));
     }
 
