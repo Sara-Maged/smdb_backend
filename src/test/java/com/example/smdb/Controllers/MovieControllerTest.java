@@ -3,6 +3,7 @@ package com.example.smdb.Controllers;
 import com.example.smdb.Entities.MovieEntity;
 import com.example.smdb.Entities.UserEntity;
 import com.example.smdb.Services.MovieService;
+import com.example.smdb.Services.RoleService;
 import com.example.smdb.Services.UserDetailService;
 import com.example.smdb.Services.UserService;
 import org.hamcrest.Matchers;
@@ -33,6 +34,12 @@ class MovieControllerTest {
 
     @MockBean
     private MovieService movieService;
+
+    @MockBean
+    private UserService userService;
+
+    @MockBean
+    private RoleService roleService;
 
     @Autowired
     private MockMvc mockMvc;

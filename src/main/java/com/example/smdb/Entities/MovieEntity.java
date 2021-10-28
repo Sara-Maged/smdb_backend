@@ -17,7 +17,6 @@ import java.util.Collection;
 //@NamedQuery(name="averageRating", query = "select avg(e.rating) from RatingEntity e where e.ratingId.movieId = ?1")
 public class MovieEntity {
     @Id
-    //@GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private String original_language;
@@ -36,8 +35,6 @@ public class MovieEntity {
     private int vote_count;
 
     private int flags = 0;
-//    @Column(columnDefinition = "boolean default false")
-//    private boolean show;
 
     @OneToMany(mappedBy = "movieEntity", cascade = CascadeType.MERGE)
     @JsonIgnore
@@ -183,12 +180,4 @@ public class MovieEntity {
     public void setFlags(int flags) {
         this.flags = flags;
     }
-
-//    public boolean isShow() {
-//        return show;
-//    }
-//
-//    public void setShow(boolean show) {
-//        this.show = show;
-//    }
 }

@@ -1,7 +1,6 @@
 package com.example.smdb.Controllers;
 
 import com.example.smdb.Entities.MovieEntity;
-import com.example.smdb.Entities.UserEntity;
 import com.example.smdb.Services.MovieService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -9,7 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping
@@ -38,7 +36,7 @@ public class MovieController {
     @GetMapping("user/movie/{id}")
     public ResponseEntity<MovieEntity> getMovieById (@PathVariable("id") Integer id) throws Exception {
         MovieEntity movie = movieService.findMovieById(id);
-        return new ResponseEntity(movie, HttpStatus.OK);
+        return new ResponseEntity<>(movie, HttpStatus.OK);
     }
 
     @PostMapping("admin/addMovie")
@@ -55,7 +53,7 @@ public class MovieController {
     @PutMapping("user/flagMovie/{id}")
     public ResponseEntity<MovieEntity> flagMovieById(@PathVariable("id") Integer id){
         MovieEntity movie = movieService.flagMovieById(id);
-        return new ResponseEntity(movie, HttpStatus.OK);
+        return new ResponseEntity<>(movie, HttpStatus.OK);
     }
 
     @GetMapping("admin/flaggedMovies")

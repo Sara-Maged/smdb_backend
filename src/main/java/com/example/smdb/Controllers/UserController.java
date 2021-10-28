@@ -5,7 +5,6 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.auth0.jwt.interfaces.JWTVerifier;
 import com.example.smdb.Entities.MovieEntity;
-import com.example.smdb.Entities.RatingEntity;
 import com.example.smdb.Entities.RoleEntity;
 import com.example.smdb.Entities.UserEntity;
 import com.example.smdb.Services.UserService;
@@ -13,13 +12,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -28,7 +21,6 @@ import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static java.util.Arrays.stream;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 import static org.springframework.http.HttpStatus.FORBIDDEN;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -36,10 +28,6 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RestController
 @Slf4j
 public class UserController {
-<<<<<<< HEAD
-
-=======
->>>>>>> 4ceb08bf954cc10d2e8c41db5f43884bc604260d
     private final UserService userService;
 
     @Autowired
@@ -63,13 +51,10 @@ public class UserController {
         return ResponseEntity.ok().build();
     }
 
-<<<<<<< HEAD
     @GetMapping("user/{id}/recommendations")
     public ResponseEntity<List<MovieEntity>> getUserRecommendations(@PathVariable("id") Integer id) throws Exception{
         return ResponseEntity.ok().body(userService.getUserRecommendation(id));
     }
-=======
->>>>>>> 4ceb08bf954cc10d2e8c41db5f43884bc604260d
 
     @GetMapping("/refreshToken")
     public void refreshToken(HttpServletRequest request, HttpServletResponse response) throws IOException {

@@ -2,6 +2,8 @@ package com.example.smdb.Controllers;
 
 import com.example.smdb.Entities.UserEntity;
 import com.example.smdb.Security.SecurityConfiguration;
+import com.example.smdb.Services.MovieService;
+import com.example.smdb.Services.RoleService;
 import com.example.smdb.Services.UserDetailService;
 import com.example.smdb.Services.UserService;
 import org.hamcrest.Matchers;
@@ -55,6 +57,12 @@ public class UserControllerTest{
     @MockBean
     private UserService userService;
 
+    @MockBean
+    private MovieService  movieService;
+
+    @MockBean
+    private RoleService roleService;
+
     @Autowired
     private MockMvc mockMvc;
 
@@ -78,7 +86,6 @@ public class UserControllerTest{
         this.mockMvc
                 .perform(MockMvcRequestBuilders.get("/admin/users")
                         .with(SecurityMockMvcRequestPostProcessors.user("Sara@gmail.com").roles("ADMIN").password("password"))
-                        //.with(SecurityMockMvcRequestPostProcessors.jwt())
                         .header("X-Foo", "Bearer"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.size()", Matchers.is(2)))
@@ -96,9 +103,6 @@ public class UserControllerTest{
                         .with(csrf())
                 )
                 .andExpect(status().isOk());
-
-        verify(userService).addNewUser(any(UserEntity.class));
-
     }
 
     @Test

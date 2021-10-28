@@ -17,7 +17,6 @@ public class UserEntity {
 
     private String email;
     private String password;
-    //private String role;
     private boolean active;
 
     @ManyToMany(fetch = FetchType.EAGER)
@@ -72,14 +71,6 @@ public class UserEntity {
     public void setPassword(String password) {
         this.password = password;
     }
-
-//    public String getRoles() {
-//        return roles;
-//    }
-//
-//    public void setRoles(String roles) {
-//        this.roles = roles;
-//    }
 
     public boolean isActive() {
         return active;
