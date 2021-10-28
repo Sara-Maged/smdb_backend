@@ -78,7 +78,6 @@ public class UserControllerTest{
         this.mockMvc
                 .perform(MockMvcRequestBuilders.get("/admin/users")
                         .with(SecurityMockMvcRequestPostProcessors.user("Sara@gmail.com").roles("ADMIN").password("password"))
-                        //.with(SecurityMockMvcRequestPostProcessors.jwt())
                         .header("X-Foo", "Bearer"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.size()", Matchers.is(2)))
