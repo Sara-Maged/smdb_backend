@@ -9,13 +9,28 @@ public class GenreEntity {
     private int genre_id;
     private int id;
 
-
+//    @ManyToOne
+//    //@JoinColumn//("movie_ids_id")
+//    private int movieId;
 
     public GenreEntity() {
     }
 
-    public GenreEntity(int id) {
+    public int getGenre_id() {
+        return genre_id;
+    }
+
+    public void setGenre_id(int genre_id) {
+        this.genre_id = genre_id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
         this.id = id;
     }
+
 
 }

@@ -19,7 +19,7 @@ public class RatingEntity {
 
     @ManyToOne
     @MapsId("userId")
-    @JoinColumn//(name = "id")
+    @JoinColumn//=(name = "id")
     @JsonIgnore
     private UserEntity userEntity;
 

@@ -42,7 +42,7 @@ public class MovieController {
     }
 
     @PostMapping("admin/addMovie")
-    public ResponseEntity<MovieEntity> addNewUser(@RequestBody MovieEntity movie){
+    public ResponseEntity<MovieEntity> addNewMovie(@RequestBody MovieEntity movie){
         return ResponseEntity.ok().body(movieService.addNewMovie(movie));
     }
 
