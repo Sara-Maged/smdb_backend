@@ -69,23 +69,6 @@ class MovieServiceTest {
         assertThat(movieCreated.getTitle().equals(movie.getTitle()));
     }
 
-//    @Test
-//    void saveList() {
-//        MovieEntity movie = new MovieEntity();
-//        movie.setTitle("Wonder");
-//        MovieEntity movie1 = new MovieEntity();
-//        movie.setTitle("Wonder");
-//
-//        List<MovieEntity> movies = new ArrayList(Arrays.asList(movie, movie1));
-//
-//        Mockito.when(movieService.saveList(movies)).thenReturn(movies);
-////        movieService.saveList(movies).forEach(movie2 -> {
-////            assertEquals("Wonder", movie2.getTitle());
-////        });
-//
-//        assertEquals(2, movieService.saveList(movies).hashCode());
-//    }
-
     @Test
     void flagMovieById_FlagsNumberDiffer_True() {
         MovieEntity movie = new MovieEntity();
